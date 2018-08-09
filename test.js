@@ -360,10 +360,6 @@ queue.onData = function(args, end) {
       for (var i = 0; i < k; i++) Assert(Hash(shards[i]) === hashes[i]);
       for (var i = k; i < k + m; i++) hashes[i] = Hash(shards[i]);
       // Test against fixed vector:
-      var key = '';
-      key += String(k).padStart(2, '0') + ',';
-      key += String(m).padStart(2, '0') + ',';
-      key += String(shardSize).padStart(6, '0');
       var result = Hash(hashes.join(','));
       if (regenerate) {
         console.log('  [' +
@@ -764,6 +760,6 @@ queue.concat([
   [24, 5, 13,  9,      8, '4968f6d39f355c41e006b754b436d823'],
   [24, 5,  4, 12,  89816, '93e82c3652f9f963eed72e0d640d9528'],
   [24, 6, 10,  5,      8, '1cd9f45259767305dd7b565bcf9c0359'],
-  [24, 6,  3,  1, 164320, 'f2fad94fdb9e4518728cb0a5a5dbe392']
+  [24, 6,  3,  1, 164320, 'f2fad94fdb9e4518728cb0a5a5dbe392'],
 ]);
 queue.end();
