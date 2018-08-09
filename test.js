@@ -317,7 +317,7 @@ queue.onData = function(args, end) {
   );
   var buffer = cipher.update(Buffer.alloc(bufferOffset + bufferSize));
   Assert(buffer.length === bufferOffset + bufferSize);
-  var parity = Buffer.alloc(parityOffset + paritySize);
+  var parity = Node.crypto.randomBytes(parityOffset + paritySize);
   if (parityOffset) {
     Assert(
       cipher.update(Buffer.alloc(parityOffset)).copy(parity, 0) === parityOffset
