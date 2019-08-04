@@ -13,6 +13,8 @@ npm install @ronomon/reed-solomon
 
 ## Performance
 The native addon executes asynchronously in Node's threadpool without blocking the event loop:
+<details>
+
 ```
        CPU | Intel(R) Xeon(R) CPU E3-1230 V2 @ 3.30GHz
      CORES | 8
@@ -662,6 +664,9 @@ The native addon executes asynchronously in Node's threadpool without blocking t
         20 |          4 |     262144 |    4.535ms |   1156.01 MB/s
 ------------------------------------------------------------------
 ```
+
+</details>
+
 ## Usage
 
 #### Adjust threadpool size and control concurrency
